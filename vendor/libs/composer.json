@@ -1,0 +1,9 @@
+{
+  "name": "sofia/src",
+  "description": "Common interface for HTTP messages",
+  "autoload": {
+    "psr-4": {
+      "libs\\": "src/"
+    }
+  }
+}

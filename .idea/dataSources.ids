@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="MySQL - sf2@localhost" uuid="c758bfc1-a9ba-46d6-b104-aacf354c5bdc">
+    <database-info product="MySQL" version="5.5.50-0ubuntu0.14.04.1" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="exact" quoted-identifiers="exact"/>
+    <database-model serializer="dbm" rdbms="MYSQL" format-version="2.5">
+      <schema id="1" name="sf2"/>
+      <table id="2" parent="1" name="post"/>
+      <table id="3" parent="1" name="user"/>
+      <table id="4" parent="1" name="anime"/>
+      <column id="5" parent="2" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="6" parent="2" name="nome">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="7" parent="2" name="publicado">
+        <data-type>tinyint(1)</data-type>
+      </column>
+      <column id="8" parent="2" name="data">
+        <data-type>date</data-type>
+      </column>
+      <column id="9" parent="2" name="content">
+        <data-type>text</data-type>
+      </column>
+      <column id="10" parent="2" name="comentario_id">
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="11" parent="2" name="update_at">
+        <mandatory>1</mandatory>
+        <data-type>timestamp</data-type>
+        <default-expression>&apos;CURRENT_TIMESTAMP&apos;</default-expression>
+      </column>
+      <key id="12" parent="2" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="13" parent="3" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="14" parent="3" name="nome">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="15" parent="3" name="idade">
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="16" parent="3" name="aniversario">
+        <data-type>date</data-type>
+      </column>
+      <column id="17" parent="3" name="bio">
+        <data-type>text</data-type>
+      </column>
+      <column id="18" parent="3" name="update_at">
+        <mandatory>1</mandatory>
+        <data-type>timestamp</data-type>
+        <default-expression>&apos;CURRENT_TIMESTAMP&apos;</default-expression>
+      </column>
+      <column id="19" parent="3" name="vevei">
+        <data-type>text</data-type>
+      </column>
+      <key id="20" parent="3" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="21" parent="4" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="22" parent="4" name="update_at">
+        <mandatory>1</mandatory>
+        <data-type>timestamp</data-type>
+        <default-expression>&apos;CURRENT_TIMESTAMP&apos;</default-expression>
+      </column>
+      <key id="23" parent="4" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+    </database-model>
+  </data-source>
+</component>
