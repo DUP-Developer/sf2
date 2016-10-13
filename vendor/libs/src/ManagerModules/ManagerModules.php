@@ -66,7 +66,7 @@ class ManagerModules{
         
         
         //gerando o controller
-        $controller = "<?php\nnamespace modules\\".strtolower(self::$pathName)."\\controller;\nuse \\libs\\kernel\\ControllerBase as CB;\n\nclass Controller".self::$pathName." extends CB{\n\n\tpublic function index($"."app){\n\n\t}\n}";
+        $controller = "<?php\nnamespace modules\\".strtolower(self::$pathName)."\\controller;\nuse \\libs\\kernel\\ControllerBase as CB;\n\nclass Controller".self::$pathName." extends CB{\n\n\tpublic function index(\$app, \$response){\n // resposta que vem do servidor => \$response. \n// url onde esta o arquivo que vai ser renderizado. \n // argumento a serem passados para a pagina. => \$args \n\n return \$this->view->render(\$response, \"/".self::$pathName."/index.php\");\n\t}\n}";
         \libs\kernel\File::newFile($dir."/controller/Controller".self::$pathName.".php", $controller);
 
         //gerando o manifest json

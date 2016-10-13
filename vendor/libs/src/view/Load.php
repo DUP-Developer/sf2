@@ -1,5 +1,5 @@
 <?php
-namespace libs\view;
+namespace libs\src\view;
 /**
  * Created by PhpStorm.
  * User: root
@@ -15,8 +15,6 @@ class Load
      * @param mixed[] $itens nomes dos assets que ele vai inplantar
      *
      *@return string $string retorna as tags de implantação
-     *
-     * TODO [urgente] corrigir as rotas pq ta eerdas.... esta pegando estaticamente
      **/
     public static function assets($itens = []){
         $tagCss = "<link rel='stylesheet' href='here'>\n";
@@ -36,10 +34,10 @@ class Load
                             if($file){ //preparando as tags de inclução css e js
                                 switch (end(explode(".", $g))){
                                     case "js":
-                                        $tags .= str_replace("here", \libs\kernel\path::site()."sofia2/node_modules/".$k."/dist/".$g, $tagJs);
+                                        $tags .= str_replace("here", $path_base."/".$k."/dist/".$g, $tagJs);
                                         break;
                                     case "css":
-                                        $tags .= str_replace("here", \libs\kernel\path::site()."sofia2/node_modules/".$k."/dist/".$g, $tagCss);
+                                        $tags .= str_replace("here", $path_base."/".$k."/dist/".$g, $tagCss);
                                         break;
                                 }
                             }else{
@@ -48,10 +46,10 @@ class Load
 
                                         switch (end(explode(".", $h))){
                                             case "js":
-                                                $tags .= str_replace("here", \libs\kernel\path::site()."sofia2/node_modules/".$k."/dist/".$g."/".$h, $tagJs);
+                                                $tags .= str_replace("here", \libs\kernel\path::path()."../node_modules/".$k."/dist/".$g."/".$h, $tagJs);
                                                 break;
                                             case "css":
-                                                $tags .= str_replace("here", \libs\kernel\path::site()."sofia2/node_modules/".$k."/dist/".$g."/".$h, $tagCss);
+                                                $tags .= str_replace("here", \libs\kernel\path::path()."../node_modules/".$k."/dist/".$g."/".$h, $tagCss);
                                                 break;
                                         }
                                     }
@@ -62,7 +60,7 @@ class Load
                     }
             }
 
-        return $tags;
+        print $tags;
     }
 }
 ?>

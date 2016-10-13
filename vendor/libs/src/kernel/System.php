@@ -1,5 +1,6 @@
 <?php
 namespace libs\kernel;
+
 class System{
     /**
      * essa função é responsavel por dar um ID para a aplicação e com ela ter o controle de

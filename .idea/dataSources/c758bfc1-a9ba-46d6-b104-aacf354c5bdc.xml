@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="MySQL - sf2@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="2.6">
+    <schema id="1" name="sf2">
+      <visible>1</visible>
+    </schema>
+    <table id="2" parent="1" name="post"/>
+    <table id="3" parent="1" name="user"/>
+    <table id="4" parent="1" name="anime"/>
+    <column id="5" parent="2" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="6" parent="2" name="nome">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="7" parent="2" name="publicado">
+      <data-type>tinyint(1)|0</data-type>
+    </column>
+    <column id="8" parent="2" name="data">
+      <data-type>date|0</data-type>
+    </column>
+    <column id="9" parent="2" name="content">
+      <data-type>text|0</data-type>
+    </column>
+    <column id="10" parent="2" name="comentario_id">
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="11" parent="2" name="update_at">
+      <mandatory>1</mandatory>
+      <data-type>timestamp|0</data-type>
+      <default-expression>&apos;CURRENT_TIMESTAMP&apos;</default-expression>
+    </column>
+    <key id="12" parent="2" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <column id="13" parent="3" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="14" parent="3" name="nome">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="15" parent="3" name="idade">
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="16" parent="3" name="aniversario">
+      <data-type>date|0</data-type>
+    </column>
+    <column id="17" parent="3" name="bio">
+      <data-type>text|0</data-type>
+    </column>
+    <column id="18" parent="3" name="update_at">
+      <mandatory>1</mandatory>
+      <data-type>timestamp|0</data-type>
+      <default-expression>&apos;CURRENT_TIMESTAMP&apos;</default-expression>
+    </column>
+    <column id="19" parent="3" name="vevei">
+      <data-type>text|0</data-type>
+    </column>
+    <key id="20" parent="3" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <column id="21" parent="4" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="22" parent="4" name="update_at">
+      <mandatory>1</mandatory>
+      <data-type>timestamp|0</data-type>
+      <default-expression>&apos;CURRENT_TIMESTAMP&apos;</default-expression>
+    </column>
+    <key id="23" parent="4" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+  </database-model>
+</dataSource>

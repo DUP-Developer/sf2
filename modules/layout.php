@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <title>Wellcome SF2</title>
-    <?=\libs\view\Load::assets()?>
+    <?=libs\src\view\Load::assets()?>
     <style>
         body{
             background: #D3E136;

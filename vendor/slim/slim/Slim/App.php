@@ -28,6 +28,8 @@ use Slim\Interfaces\Http\EnvironmentInterface;
 use Slim\Interfaces\RouteGroupInterface;
 use Slim\Interfaces\RouteInterface;
 use Slim\Interfaces\RouterInterface;
+use \libs\kernel\System;
+
 
 /**
  * App
@@ -80,7 +82,7 @@ class App
             $container = new Container($container);
 
             // chamanda de ações do sofia
-            \libs\kernel\System::IDApp();
+            //System::IDApp();
         }
         if (!$container instanceof ContainerInterface) {
             throw new InvalidArgumentException('Expected a ContainerInterface');

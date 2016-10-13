@@ -4,7 +4,7 @@ Framework de sistema web criado por:
 joerverson.santos@gmail.com
 ```
 
-# Prerequisitos
+# Pré-requisitos
 
 - php 5.5
 - composer
@@ -27,3 +27,15 @@ Path responsavel por ficar os modulos do sistema, os modulos que o sistema irá 
 __vendor__
 
 lugar onde fica o slim micro framework e as libs usadas pelo sistema
+
+# JSON
+Para poder retronar um json devese ser implementado nos modulos a seguinte metodo, onde o
+´$app´ é o objeto do container onde é possivel renderizar paginas.
+´$response´ é as informações de resposata do servdor.
+´$args´ são os argumentos que foram por parametro. 
+
+```
+    public function json($app, $response, $args){
+        
+    }
+```
