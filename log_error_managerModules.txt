@@ -1,6 +1,0 @@
-<< [create_modules] Error: Permisões no diretorio negado! [04.php]>>
-<< [create_modules] Error: Permisões no diretorio negado! [ayout.php]>>
-<< [create_modules] Error: Permisões no diretorio negado! [g]>>
-<< [create_modules] Error: Permisões no diretorio negado! [04.php]>>
-<< [create_modules] Error: Permisões no diretorio negado! [ayout.php]>>
-<< [create_modules] Error: Permisões no diretorio negado! [g]>>

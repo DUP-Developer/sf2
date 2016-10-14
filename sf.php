@@ -16,6 +16,9 @@ switch ($argv[1]){
         //executa a migração de banco de dados
         \libs\database\Migrations::run();
         break;
+    default:
+        helper();
+        break;
 }
 
 

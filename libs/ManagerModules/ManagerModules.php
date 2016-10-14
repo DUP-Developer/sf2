@@ -11,6 +11,7 @@ class ManagerModules{
 
         foreach(\libs\kernel\File::findFilesNamesByDir("modules") as $dir){
 
+
             if(!is_writable($dir)){
                 print "<< [create_modules] Error: Permisões no diretorio negado! [".substr(end(explode("/", $dir)), 1)."]>>\n";
                 continue;

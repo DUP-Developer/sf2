@@ -20,11 +20,11 @@ class File
 
         $path = array();
 
-        foreach(scandir(__dir__.'/../../../../'.$dir) as $k)
+        foreach(scandir(__dir__.'/../../'.$dir) as $k)
             if(($k != '.') && ($k != '..')) {
 
                 if( strpos($k,'_') === 0)
-                    $path[] = __dir__.'/../../../../'.$dir."/".$k;
+                    $path[] = __dir__.'/../../'.$dir."/".$k;
                 
                 
             }
