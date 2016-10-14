@@ -1,5 +1,5 @@
 <?php
-namespace libs\src\view;
+namespace libs\view;
 /**
  * Created by PhpStorm.
  * User: root
@@ -20,7 +20,7 @@ class Load
         $tagCss = "<link rel='stylesheet' href='here'>\n";
         $tagJs = "<script src=\"here\"></script>\n";
 
-        $path_base = __dir__.'/../../../../node_modules';
+        $path_base = __dir__.'/../../node_modules';
         $tags = "";
 
         foreach(scandir($path_base) as $k)// pegando os paths dentro de node_modules

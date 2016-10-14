@@ -43,12 +43,15 @@ class DB{
                 }
             }
 
+
             self::$conn = new \medoo([  "database_type" => self::$socket,
                                         "server" => self::$host,
                                         "database_name" => self::$bdname,
                                         "username" => self::$user,
                                         "password" => self::$pass,
-                                        "charset"=>"utf8"]);
+                                        "charset"=>"utf8",
+                                        'port' => 3306,
+                                    ]);
 
         }catch(\PDOException $e){
             echo "Deu algum erro na conexão - ".$e->getMessage();

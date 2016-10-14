@@ -39,3 +39,13 @@ Para poder retronar um json devese ser implementado nos modulos a seguinte metod
         
     }
 ```
+
+
+# Chamadas de renderização de paginas 
+ [php-view](https://github.com/slimphp/PHP-View)
+ 
+ com a renderização você pode usufruir do arquivo de layout da pagina 
+ 
+ ```
+ $app->view->render($response,"/user/index.php",["csda"=>1]);
+ ```

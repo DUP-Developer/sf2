@@ -134,7 +134,7 @@ class medoo
 				$commands[] = "SET NAMES '" . $this->charset . "'";
 			}
 
-			$this->pdo = new PDO(
+			$this->pdo = new \PDO(
 				$dsn,
 				$this->username,
 				$this->password,
@@ -146,7 +146,7 @@ class medoo
 				$this->pdo->exec($value);
 			}
 		}
-		catch (PDOException $e) {
+		catch (\PDOException $e) {
 			throw new Exception($e->getMessage());
 		}
 	}

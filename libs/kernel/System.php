@@ -7,7 +7,7 @@ class System{
      * onde e quantos apps com sofia estão rodando.
      */
     public static function IDApp(){
-        $path = __DIR__.'/../../../Helper/ID';
+        $path = __DIR__.'/../../Helper/ID';
 
         if(!file_exists($path)){
             mkdir($path,0777);
@@ -18,7 +18,7 @@ class System{
     }
 
     public static function loadConfigEnvDB(){
-        $f = file(__DIR__ . "/../../../../config-database.env");
+        $f = file(__DIR__ . "/../../config-database.env");
         $type_config = "";
 
         foreach ($f as $line){
