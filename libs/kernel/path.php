@@ -24,6 +24,12 @@ class path{
     public static function path(){
         return self::adapterURI()."modules/";
     }
+/**
+ * metodo para pegar assets
+**/
+    public static function assets(){
+        return self::adapterURI()."assets/";
+    }
 
     /**
      *  path interno do sistema apartir da raiz do SO usado para recuperar recursos
@@ -31,7 +37,7 @@ class path{
      * @return string retorna o caminho desde a raiz do S.O. até a pasta template do sistema no caso "modules/"
      **/
     public static function dir(){
-        return __DIR__."/../../../../modules/";
+        return __DIR__."/../../modules/";
     }
 
     /**
