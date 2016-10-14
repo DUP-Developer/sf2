@@ -10,6 +10,27 @@ $config = [
 $app = new Slim\App($config);
 
 
+/**
+ * ========================================================
+ *              authentication
+ * ========================================================
+ **/
+
+$authentication = function ($request, $response, $next) {
+
+    if(\libs\kernel\Auth::isActive())
+        return $next($request, $response);
+    else
+        return $this->view->render($response, "/user/login.php");
+
+};
+/**
+ * ========================================================
+ *              end authentication
+ * ========================================================
+ **/
+
+
 $app->get('/', function ($request, $response, $args) {
     return $this->view->render($response, "/404.php", $args);
 });
@@ -22,9 +43,34 @@ $app->get('/', function ($request, $response, $args) {
 $app->get('/{class}', function ($request, $response, $args) {
     $class = '\modules\\'.$args['class'].'\controller\Controller'.ucfirst($args['class']);
     
-    call_user_func_array(array($class, "index"), array($this, $response));
+    call_user_func_array(array($class, "index"), array($this, $response, $args));
+
+})->add($authentication);
+
+
+/**
+ * rota nivel 2 chamando class e metodo do modulo
+ * onde por padrão ele chama o index caso não chame mais nada
+ **/
+$app->get('/{class}/{method}', function ($request, $response, $args) {
+    $class = '\modules\\'.$args['class'].'\controller\Controller'.ucfirst($args['class']);
+
+    call_user_func_array(array($class, $args['method']), array($this, $response, $args));
+
+})->add($authentication);
+
+
+/**
+ * rota nivel 2 chamando class e metodo do modulo mandado por post
+ *
+ **/
+$app->post('/{class}/{method}', function ($request, $response, $args) {
+    $class = '\modules\\'.$args['class'].'\controller\Controller'.ucfirst($args['class']);
+
+    call_user_func_array(array($class, $args['method']), array($this, $response, $_POST));
 
 });
+
 
 
 /**
