@@ -31,18 +31,20 @@ class Load
 
                             $file = preg_match("/\./", $g) ? $g : false; //verificando se é arquivo
 
+
                             if($file){ //preparando as tags de inclução css e js
                                 switch (end(explode(".", $g))){
                                     case "js":
-                                        $tags .= str_replace("here", $path_base."/".$k."/dist/".$g, $tagJs);
+                                        $tags .= str_replace("here", \libs\kernel\path::path()."../node_modules/".$k."/dist/".$g, $tagJs);
                                         break;
                                     case "css":
-                                        $tags .= str_replace("here", $path_base."/".$k."/dist/".$g, $tagCss);
+                                        $tags .= str_replace("here", \libs\kernel\path::path()."../node_modules/".$k."/dist/".$g, $tagCss);
                                         break;
                                 }
                             }else{
                                 foreach (scandir($path_base."/".$k."/dist/".$g) as $h){
                                     if(($h != '.') && ($h != '..')){
+
 
                                         switch (end(explode(".", $h))){
                                             case "js":
